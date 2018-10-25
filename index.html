@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>daily guide</title>
+</head>
+<body>
+   <div onclick="menu()" class="trigger">
+    <img src="img/hamburgerToggle.png" alt="menu">
+   </div>
+    <aside id="nav">
+        <div id="pgBtnWrap">
+            <div onclick="page1()" id="pg1" class="pg">
+                food
+            </div>
+            <div onclick="page2()" id="pg2" class="pg">
+                activity
+            </div>
+            <div onclick="page3()" id="pg3" class="pg">
+                project
+            </div>
+
+            <div class="other">
+                <h3>my portfolio</h3>
+                <div class="pg">
+                        <a href="http://syntappz.tk">portfolio</a>
+                </div>
+                <h3>links</h3>
+
+                    <div class="icons">
+                        <a href="https://github.com/biscuitmanz" title="Github" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://play.google.com/store/apps/developer?id=SyntappZ" title="Google Play" target="_blank"><i class="fab fa-google-play"></i></a>
+                        <a href="#" title="Linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://codepen.io/biscuitmanz" title="Codepen" target="_blank"><i class="fab fa-codepen"></i></a>
+                        <a href="https://www.freecodecamp.org/biscuitmanz" title="Freecodecamp" target="_blank"><i class="fab fa-free-code-camp"></i></a>
+                        <a href="mailto:syntappz@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+            </div>
+
+        </div><!---- pg wrap ---->
+
+    </aside><!---- nav ---->
+    <div class="title">
+        <h1><span class="hl">d</span>aily <span class="hl">g</span>uide</h1>
+        <p>get some motivation!</p>
+    </div>
+    
+        <div id="page1" class="pgWrapper">
+            <h1 class="tit">food</h1> 
+        
+            <div id="food" class="output">breakfast</div>
+             <div id="food2" class="output">lunch</div>
+             <div id="food3" class="output">dinner</div>
+        </div>
+        <div id="page2" class="pgWrapper">
+            <h1 class="tit">activity</h1> 
+            <div id="act" class="output">activity 1</div>
+             <div id="act2" class="output">activity 2</div>
+             <div id="act3" class="output"> activity 3</div>
+        </div>
+        <div id="page3" class="pgWrapper">
+            <h1 class="tit">project</h1> 
+            <div id="pro" class="output">choice 1</div>
+            <div id="pro2" class="output">choice 2</div>
+            <div id="pro3" class="output">choice 3</div>
+        </div>
+        
+        <div class="btnWrap">
+            <button id="btn" onclick="getResults()">todays plan</button>
+            <p class="copy">SyntappZ 2018 </p>
+        </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
