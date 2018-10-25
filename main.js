@@ -3,7 +3,9 @@
 let pg1 = document.getElementById('page1');
 let pg2 = document.getElementById('page2');
 let pg3 = document.getElementById('page3');
-
+let pg1Btn = document.getElementById('pg1');
+let pg2Btn = document.getElementById('pg2');
+let pg3Btn = document.getElementById('pg3');
 
 
     
@@ -16,7 +18,9 @@ function page1(){
     pg1.style.opacity = '1';
     pg2.style.opacity = '0';
     pg3.style.opacity = '0';
-    finished = true;
+    pg1Btn.style.width = '170px';
+    pg2Btn.style.width = '200px';
+    pg3Btn.style.width = '200px';
 }
 function page2(){
     pg2.style.transform = 'rotateY(360deg)';
@@ -26,7 +30,10 @@ function page2(){
     pg2.style.opacity = '1';
     pg1.style.opacity = '0';
     pg3.style.opacity = '0';
-    finished = true;
+    pg1Btn.style.width = '200px';
+    pg2Btn.style.width = '170px';
+    pg3Btn.style.width = '200px';
+    
     
 }
 function page3(){
@@ -37,10 +44,14 @@ function page3(){
     pg3.style.opacity = '1';
     pg2.style.opacity = '0';
     pg1.style.opacity = '0';
+    pg1Btn.style.width = '200px';
+    pg2Btn.style.width = '200px';
+    pg3Btn.style.width = '170px';
     
 }
 
 
+//day shown-----------------------
 
 
 
@@ -73,9 +84,9 @@ function closeNav(){
 //activate all pages------------------------------
 function getResults(){
     foodRandomizer();
+    activityRandomizer();
+    projectRandomizer();
     
-    // activityRandomizer();
-    // projectRandomizer();
 }
 //food---------------------------------
 
@@ -98,7 +109,7 @@ function foodRandomizer(){
     //dinner
     const dinnerChoice1 = [
         'chips',
-        'mash',
+        'mash & yorkshire puds',
         'boiled potatoes',
         'jacket potato'
         
@@ -112,19 +123,30 @@ function foodRandomizer(){
     ];
     const dinnerChoice3 = [
         'beans',
-        'peas & carrots',
+        'peas & carrots & gravy',
         'curry-sauce',
-        'mushy-peas',
-        'gravy'
+        'mushy-peas & gravy',
+        'sweetcorn',
+
     ];
 
     //tea
+    
     const teaChoice = [
-        'beans',
-        'peas & carrots',
-        'curry-sauce',
-        'mushy-peas',
-        'gravy'
+        'ham',
+        'pork',
+        'chicken',
+        'lamb',
+        'beef mince',
+        'gammon',
+        'turkey'
+    ];
+    const teaChoice2 = [
+        'pasta',
+        'rice',
+        'tacos',
+        'wraps',
+        'sandwich'
     ];
 
     let randomItem = dinnerChoice1[Math.floor(Math.random()*dinnerChoice1.length)];
@@ -133,6 +155,9 @@ function foodRandomizer(){
 
     let randomBreak = breakChoice[Math.floor(Math.random()*breakChoice.length)];
 
+    let randomTea = teaChoice[Math.floor(Math.random()*teaChoice.length)];
+    let randomTea2 = teaChoice2[Math.floor(Math.random()*teaChoice2.length)];
+
     
     
 
@@ -140,23 +165,97 @@ function foodRandomizer(){
     
     foodSlot.innerHTML = randomBreak;
     foodSlot2.innerHTML = randomItem + ' ' + randomItem2 + ' ' + randomItem3;
+    foodSlot3.innerHTML = randomTea + ' ' + randomTea2;
 }
 //activity---------------------------------
 function activityRandomizer(){
-    let activity = document.getElementById('activity');
+    let activity = document.getElementById('act');
+    let activity2 = document.getElementById('act2');
+    let activity3 = document.getElementById('act3');
+    let dateSlot = document.getElementsByClassName('.date');
+    let dateAndTime = document.getElementById('timeDate');
 
-    const activityList = [
-        '1 hour bike ride',
-        '20 mins stretching',
-        '30 mins weights',
+    const workoutList = [
+        '30 mins chest and tricep',
+        '30 mins back and bicep',
+        '20 abs',
+        'day off',
+        '30 mins chest and tricep',
+        '30 mins back and bicep',
+        '20 abs'
+    ];
+    const stretchList = [
+        '20 mins legs stretch',
+        '20 mins arms stretch',
+        '40 mins chest and back stretch',
+        '1 hour full body stretch',
+        '20 mins legs stretch',
+        '20 mins arms stretch',
+        '40 mins chest and back stretch',
 
     ];
-    let randomAct = activityList[Math.floor(Math.random()*activityList.length)];
-    activity.innerHTML = randomAct;
+    const bikeList = [
+        'bike ride west kirby',
+        'bike ride upton',
+        'bike ride birkenhead',
+        'bike ride wallasey',
+        'bike ride port sunlight',
+        'bike ride barnston',
+        'day off'
+
+    ];
+
+    let day = new Date();
+    let dayOfWeek = day.getDay();
+    let monday = [workoutList[0], stretchList[0], bikeList[0], "monday's" ];
+    let tuesday = [workoutList[1], stretchList[1], bikeList[1], "tuesday's"];
+    let wednesday = [workoutList[2], stretchList[2], bikeList[2], "wednesday's"];
+    let thursday = [workoutList[3], stretchList[3], bikeList[3], "thursday's"];
+    let friday = [workoutList[4], stretchList[4], bikeList[4], "friday's"];
+    let saturday = [workoutList[5], stretchList[5], bikeList[5], "saturday's"];
+    let sunday = [workoutList[6], stretchList[6], bikeList[6], "sunday's"];
+
+    if(dayOfWeek === 1){
+         wo = monday;
+    }
+    else if(dayOfWeek === 2){
+        wo = tuesday;
+    }
+    else if(dayOfWeek === 3){
+        wo = wednesday;
+    }
+    else if(dayOfWeek === 4){
+        wo = thursday;
+    }
+    else if(dayOfWeek === 5){
+        wo = friday;
+    }
+    else if(dayOfWeek === 6){
+        wo = saturday;
+    }
+    else if(dayOfWeek === 7){
+        wo = sunday;
+    }
+    activity.innerHTML = wo[0];
+    activity2.innerHTML = wo[1];
+    activity3.innerHTML = wo[2];
+    dateSlot.innerHTML =  wo[3] + ' ';
+    
+    
 }
+
+    
+
+
+
+
+
 //project --------------------------------
 function projectRandomizer(){
-    let project = document.getElementById('project');
+    let project = document.getElementById('pro');
+    let project2 = document.getElementById('pro2');
+    let project3 = document.getElementById('pro3');
+
 
     const projectList = [
         "Array Cardio Day 1",
@@ -188,6 +287,31 @@ function projectRandomizer(){
         "Whack A Mole"
 
     ];
-    let randomAct = projectList[Math.floor(Math.random()*projectList.length)];
-    project.innerHTML = randomAct;
+    
+    
+    const projectList2 = [
+        "project page of portfolio",
+        "beautiful wirral website",
+        "giphy api web app",
+        "web dev learning host webiste"
+      
+    ];
+
+    const projectList3 = [
+        "freecodecamp",
+        "udemy javascript course",
+        "youtube javascript course",
+        "youtube grid",
+        "flexbox zombies",
+        "sololearn",
+        "grid garden",
+        "codewars",
+        "project odin"
+    ];
+    let randomPro = projectList[Math.floor(Math.random()*projectList.length)];
+    let randomPro2 = projectList2[Math.floor(Math.random()*projectList2.length)];
+    let randomPro3 = projectList3[Math.floor(Math.random()*projectList3.length)];
+    project.innerHTML = randomPro;
+    project2.innerHTML = '3-4 hours'+ ' ' + randomPro2;
+    project3.innerHTML = '2 hours'+ ' ' +randomPro3;
 }
