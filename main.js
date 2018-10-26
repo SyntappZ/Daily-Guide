@@ -172,8 +172,12 @@ function activityRandomizer(){
     let activity = document.getElementById('act');
     let activity2 = document.getElementById('act2');
     let activity3 = document.getElementById('act3');
-    let dateSlot = document.getElementsByClassName('.date');
-    let dateAndTime = document.getElementById('timeDate');
+    let dateSlot = document.querySelector('.date');
+    let dateSlot2 = document.querySelector('.date2');
+    let dateSlot3 = document.querySelector('.date3');
+
+
+   
 
     const workoutList = [
         '30 mins chest and tricep',
@@ -240,6 +244,8 @@ function activityRandomizer(){
     activity2.innerHTML = wo[1];
     activity3.innerHTML = wo[2];
     dateSlot.innerHTML =  wo[3] + ' ';
+    dateSlot2.innerHTML =  wo[3] + ' ';
+    dateSlot3.innerHTML =  wo[3] + ' ';
     
     
 }
@@ -290,7 +296,7 @@ function projectRandomizer(){
     
     
     const projectList2 = [
-        "project page of portfolio",
+        "portfolio",
         "beautiful wirral website",
         "giphy api web app",
         "web dev learning host webiste"
@@ -305,6 +311,7 @@ function projectRandomizer(){
         "flexbox zombies",
         "sololearn",
         "grid garden",
+        "css animations",
         "codewars",
         "project odin"
     ];
@@ -313,5 +320,5 @@ function projectRandomizer(){
     let randomPro3 = projectList3[Math.floor(Math.random()*projectList3.length)];
     project.innerHTML = randomPro;
     project2.innerHTML = '3-4 hours'+ ' ' + randomPro2;
-    project3.innerHTML = '2 hours'+ ' ' +randomPro3;
+    project3.innerHTML = '1 hour'+ ' ' +randomPro3;
 }

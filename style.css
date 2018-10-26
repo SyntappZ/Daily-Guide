@@ -177,6 +177,10 @@ body{
     font-family: 'Courier New', Courier, monospace;
     color:rgb(179, 177, 177);
     cursor: pointer;
+    
+}
+#btn:focus{
+    outline:0;
 }
 .copy{
     color:#fff;
@@ -195,16 +199,5 @@ body{
 #page3{
     opacity: 0;
 }
-/*---------------- time and date -------------------*/
 
-#timeDate{
-    position: absolute;
-    bottom:100px;
-    right:100px;
-    width:260px;
-    height:20px;
-    border:solid 2px #fff;
-    color:#fff;
-    border-radius:5px;
 
-}
