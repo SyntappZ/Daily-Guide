@@ -151,6 +151,9 @@ body{
     padding:0;
     font-family: 'Courier New', Courier, monospace;
 }
+.pgWrapper h1{
+        font-size:20px;
+    }
 .output{
     border:2px solid #fff;
     width:100%;
@@ -256,9 +259,7 @@ body{
         top:190px;
         left:40px;
     }
-    .pgWrapper h1{
-        font-size:18px;
-    }
+    
     
     .btnWrap{
         top:580px
