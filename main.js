@@ -102,10 +102,18 @@ function movePageRight(){
 
 
 function openNav(){
+    if(window.innerWidth > 600){
     pages.style.transitionDelay = '800ms';
     pages.style.opacity = '1';
     nav.style.width = '300px'
     open = true;
+    }else{
+        pages.style.transitionDelay = '800ms';
+        pages.style.opacity = '1';
+        nav.style.width = '100%'
+        open = true;
+    }
+    
 }
 function closeNav(){
     pages.style.opacity = '0';
@@ -113,6 +121,7 @@ function closeNav(){
     nav.style.transitionDelay = '500ms';
     nav.style.width = '50px'
     open = false;
+    
 }
 
 //activate all pages------------------------------
