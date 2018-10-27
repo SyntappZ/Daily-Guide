@@ -51,7 +51,7 @@ function page3(){
 }
 
 
-//day shown-----------------------
+
 
 
 
@@ -113,7 +113,6 @@ function openNav(){
         nav.style.width = '100%'
         open = true;
     }
-    
 }
 function closeNav(){
     pages.style.opacity = '0';
@@ -121,16 +120,19 @@ function closeNav(){
     nav.style.transitionDelay = '500ms';
     nav.style.width = '50px'
     open = false;
-    
+    setTimeout(removeNavBtn, 1000);
 }
-
+function removeNavBtn(){
+        pages.style.display = 'none';
+}
 //activate all pages------------------------------
 function getResults(){
     foodRandomizer();
     activityRandomizer();
     projectRandomizer();
-    
+    //removeNavBtn();
 }
+
 //food---------------------------------
 
 function foodRandomizer(){
