@@ -17,9 +17,15 @@ body{
     z-index: 2;
     cursor: pointer;
 }
+
+.trigger:hover img{
+   width:50%;
+   margin-top: 13px;
+}
 .trigger img{
     width:60%;
     margin:10px;
+    transition:.7s ease;
 }
 
 #nav{
@@ -190,7 +196,10 @@ body{
     font-family: 'Courier New', Courier, monospace;
     color:rgb(179, 177, 177);
     cursor: pointer;
-    
+    transition: .2s;
+}
+#btn:hover{
+    background-color:rgb(14, 14, 14);
 }
 #btn:focus{
     outline:0;
@@ -261,7 +270,7 @@ body{
         
         width:75%;
         font-size:8px;
-        top:90px;
+        top:130px;
         left:10%;
         justify-content: center;
         height:auto;
