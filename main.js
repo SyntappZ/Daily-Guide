@@ -103,13 +103,17 @@ function movePageRight(){
 
 function openNav(){
     if(window.innerWidth > 600){
-    pages.style.transitionDelay = '800ms';
-    pages.style.opacity = '1';
-    nav.style.width = '300px'
-    open = true;
+        pages.style.display = 'block';
+        nav.style.width = '300px'
+        setTimeout(addNavBtn, 800);
+        pages.style.opacity = '0';
+        open = true;
+        
+
     }else{
-        pages.style.transitionDelay = '800ms';
-        pages.style.opacity = '1';
+        pages.style.display = 'block';
+        setTimeout(addNavBtn, 800);
+        pages.style.opacity = '0';
         nav.style.width = '100%'
         open = true;
     }
@@ -123,14 +127,17 @@ function closeNav(){
     setTimeout(removeNavBtn, 1000);
 }
 function removeNavBtn(){
-        pages.style.display = 'none';
+    pages.style.display = 'none';
+}
+function addNavBtn(){
+    pages.style.opacity = '1';
 }
 //activate all pages------------------------------
 function getResults(){
     foodRandomizer();
     activityRandomizer();
     projectRandomizer();
-    //removeNavBtn();
+   
 }
 
 //food---------------------------------
