@@ -58,14 +58,48 @@ function page3(){
 //nav-------------------------------
 let pages = document.getElementById('pgBtnWrap')
 let nav = document.getElementById('nav');
+let pgWrapper = document.getElementById('page1');
+let pgWrapper2 = document.getElementById('page2');
+let pgWrapper3 = document.getElementById('page3');
+let btnWrap = document.querySelector('.btnWrap');
+let title = document.querySelector('.tWrap');
 function menu(){
     if(open === true){
         closeNav();
+        movePageRight()
     }else{
         openNav();
-
+        movePageLeft();
     }
 }
+function movePageLeft(){
+    if(window.innerWidth < 800 && window.innerWidth > 600){
+        title.style.left = '150px';
+        pgWrapper.style.left = '300px';
+        pgWrapper2.style.left = '300px';
+        pgWrapper3.style.left = '300px';
+        btnWrap.style.left = '300px';
+        open = true;
+    }
+    
+}
+function movePageRight(){
+    if(window.innerWidth < 800 && window.innerWidth > 600){
+        title.style.left = '0';
+        title.style.transitionDelay = '500ms';
+        pgWrapper.style.left = '0';
+        pgWrapper.style.transitionDelay = '500ms';
+        pgWrapper2.style.left = '0';
+        pgWrapper2.style.transitionDelay = '500ms';
+        pgWrapper3.style.left = '0';
+        pgWrapper3.style.transitionDelay = '500ms';
+        btnWrap.style.transitionDelay = '500ms';
+        btnWrap.style.left = '0';
+        open = false;
+    }
+    
+}
+
 
 function openNav(){
     pages.style.transitionDelay = '800ms';

@@ -126,6 +126,10 @@ body{
     margin:0;
     text-transform: capitalize;  
 }
+.tWrap{
+    position: relative;
+    transition:.5s;
+}
 
 .pgWrapper{
     width:450px;
@@ -139,6 +143,7 @@ body{
     justify-content: space-between;
     flex-direction: column;
     padding:20px;
+    transition: .5s;
 }
 .pgWrapper p{
     color:#fff;
@@ -165,6 +170,7 @@ body{
     right:0;
     top:750px;
     margin:auto;
+    transition:.5s;
 }
 #btn{
     text-transform: capitalize;
@@ -188,6 +194,7 @@ body{
     padding:0;
     margin:0;
 }
+
 /*------------------ pages ----------------------*/
 #page1{
     opacity: 1;
@@ -200,4 +207,80 @@ body{
     opacity: 0;
 }
 
+/*---------------- tablet responsive ------------------*/
+@media(max-height:800px){
+    #pgBtnWrap h3{
+        margin-top:100px;
+    }
+}
+@media (min-width: 750px) and (max-width: 1050px){
+   
+    .pgWrapper{
+        z-index: -10;
+        width:400px;
+        font-size:12px;
+        top:280px;
+    }
+    .pgWrapper h1{
+        font-size:18px;
+    }
+    
+    .btnWrap{
+        top:580px
+    }
+    #nav{
+        background-color:rgb(0, 0, 0);
+        height:100vh;
+    }
+    .title{
+        top:0;
+    }
+}
 
+
+/*---------------- mobile responsive ------------------*/
+@media (min-width: 300px) and (max-width: 650px){
+    body{
+       
+        height:100vh;
+        background: none;
+        background-color: #29D07A;
+        background-size:cover;
+        text-align:center;
+    
+    }
+    .pgWrapper{
+        z-index: -10;
+        width:75%;
+        font-size:8px;
+        top:190px;
+        left:40px;
+    }
+    .pgWrapper h1{
+        font-size:18px;
+    }
+    
+    .btnWrap{
+        top:580px
+    }
+    #nav{
+        background-color:rgb(0, 0, 0);
+        height:100vh;
+    }
+    .tWrap{
+        left:8%;
+    }
+    .tWrap h1{
+        font-size: 40px;
+    }
+    .title{
+        top:0;
+    }
+    #pgBtnWrap h3{
+        margin:0;
+    }
+    .pg{
+        margin:15% auto;
+    }
+
+}
