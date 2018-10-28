@@ -1,3 +1,16 @@
+
+
+window.addEventListener('load', function(){
+    let loadScreen = document.getElementById('loading');
+    loadScreen.style.opacity = '0';
+    setTimeout(removeLoadScreen, 500);
+})
+
+function removeLoadScreen(){
+    let loadScreen = document.getElementById('loading');
+    document.body.removeChild(loadScreen);
+}
+
 //pages animation--------------------------
 
 let pg1 = document.getElementById('page1');
@@ -137,7 +150,6 @@ function getResults(){
     foodRandomizer();
     activityRandomizer();
     projectRandomizer();
-   
 }
 
 //food---------------------------------
@@ -271,25 +283,26 @@ function activityRandomizer(){
     let saturday = [workoutList[5], stretchList[5], bikeList[5], "saturday's"];
     let sunday = [workoutList[6], stretchList[6], bikeList[6], "sunday's"];
 
-    if(dayOfWeek === 1){
+
+    if(dayOfWeek === 0){
          wo = monday;
     }
-    else if(dayOfWeek === 2){
+    else if(dayOfWeek === 1){
         wo = tuesday;
     }
-    else if(dayOfWeek === 3){
+    else if(dayOfWeek === 2){
         wo = wednesday;
     }
-    else if(dayOfWeek === 4){
+    else if(dayOfWeek === 3){
         wo = thursday;
     }
-    else if(dayOfWeek === 5){
+    else if(dayOfWeek === 4){
         wo = friday;
     }
-    else if(dayOfWeek === 6){
+    else if(dayOfWeek === 5){
         wo = saturday;
     }
-    else if(dayOfWeek === 7){
+    else if(dayOfWeek === 6){
         wo = sunday;
     }
     activity.innerHTML = wo[0];
