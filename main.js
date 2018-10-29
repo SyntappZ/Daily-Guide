@@ -34,6 +34,9 @@ function page1(){
     pg1Btn.style.width = '170px';
     pg2Btn.style.width = '200px';
     pg3Btn.style.width = '200px';
+    if(innerWidth <= 600){
+        closeNav();
+    }
 }
 function page2(){
     pg2.style.transform = 'rotateY(360deg)';
@@ -46,7 +49,9 @@ function page2(){
     pg1Btn.style.width = '200px';
     pg2Btn.style.width = '170px';
     pg3Btn.style.width = '200px';
-    
+    if(innerWidth <= 600){
+        closeNav();
+    }
     
 }
 function page3(){
@@ -60,7 +65,9 @@ function page3(){
     pg1Btn.style.width = '200px';
     pg2Btn.style.width = '200px';
     pg3Btn.style.width = '170px';
-    
+    if(innerWidth <= 600){
+        closeNav();
+    }
 }
 
 
