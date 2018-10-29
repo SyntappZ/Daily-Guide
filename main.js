@@ -285,25 +285,25 @@ function activityRandomizer(){
 
 
     if(dayOfWeek === 0){
-         wo = monday;
+         wo = sunday;
     }
     else if(dayOfWeek === 1){
-        wo = tuesday;
+        wo = monday;
     }
     else if(dayOfWeek === 2){
-        wo = wednesday;
+        wo = tuesday;
     }
     else if(dayOfWeek === 3){
-        wo = thursday;
+        wo = wednesday;
     }
     else if(dayOfWeek === 4){
-        wo = friday;
+        wo = thursday;
     }
     else if(dayOfWeek === 5){
-        wo = saturday;
+        wo = friday;
     }
     else if(dayOfWeek === 6){
-        wo = sunday;
+        wo = saturday;
     }
     activity.innerHTML = wo[0];
     activity2.innerHTML = wo[1];
