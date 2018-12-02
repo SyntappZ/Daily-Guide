@@ -138,7 +138,7 @@ function openNav(){
         pages.style.display = 'block';
         nav.style.width = '300px';
         pages.style.opacity = '0';
-        setTimeout(addNavBtn, 500);
+        setTimeout(addNavBtn, 400);
         open = true;
             
     }
@@ -148,13 +148,15 @@ function openNav(){
         nav.style.width = '100%';
         setTimeout(addNavBtn, 100)
         open = true;
+        j++;
     }
     else if(window.innerWidth <= 600 && j >= 1){
         pages.style.display = 'block';
         nav.style.width = '100%';
         pages.style.opacity = '0';
-        setTimeout(addNavBtn, 500);
+        setTimeout(addNavBtn, 400);
         open = true;
+       
         
     }
     
