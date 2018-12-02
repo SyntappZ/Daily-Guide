@@ -170,7 +170,7 @@ body{
     display: none;
     height:700px;
     opacity: 0;
-    transition: .5s linear;
+    transition: .3s linear;
 }
 #pgBtnWrap h3{
     font-family: 'Courier New', Courier, monospace;
@@ -245,7 +245,6 @@ body{
     flex-direction: column;
     padding:20px;
     transition: .5s;
-    
 
 }
 .pgWrapper h1{

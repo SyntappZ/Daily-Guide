@@ -83,6 +83,7 @@ let pgWrapper2 = document.getElementById('page2');
 let pgWrapper3 = document.getElementById('page3');
 let btnWrap = document.querySelector('.btnWrap');
 let title = document.querySelector('.tWrap');
+
 function menu(){
     if(open === true){
         closeNav();
@@ -92,6 +93,7 @@ function menu(){
         movePageLeft();
     }
 }
+
 function movePageLeft(){
     if(window.innerWidth < 800 && window.innerWidth > 600){
         title.style.left = '150px';
@@ -103,6 +105,7 @@ function movePageLeft(){
     }
     
 }
+
 function movePageRight(){
     if(window.innerWidth < 800 && window.innerWidth > 600){
         title.style.left = '0';
@@ -122,29 +125,57 @@ function movePageRight(){
 
 
 function openNav(){
-    if(window.innerWidth > 600){
+   
+    if(window.innerWidth > 600 && j === 0){
         pages.style.display = 'block';
-        nav.style.width = '300px'
-        setTimeout(addNavBtn, 800);
+        nav.style.width = '300px';
         pages.style.opacity = '0';
+        setTimeout(addNavBtn, 100);
         open = true;
-        
-
-    }else{
+        j++;
+    }
+   else if(window.innerWidth > 600 && j >= 1){
         pages.style.display = 'block';
-        setTimeout(addNavBtn, 800);
+        nav.style.width = '300px';
         pages.style.opacity = '0';
-        nav.style.width = '100%'
+        setTimeout(addNavBtn, 500);
+        open = true;
+            
+    }
+    if(window.innerWidth <= 600 && j === 0){
+        pages.style.display = 'block';
+        pages.style.opacity = '0';
+        nav.style.width = '100%';
+        setTimeout(addNavBtn, 100)
         open = true;
     }
+    else if(window.innerWidth <= 600 && j >= 1){
+        pages.style.display = 'block';
+        nav.style.width = '100%';
+        pages.style.opacity = '0';
+        setTimeout(addNavBtn, 500);
+        open = true;
+        
+    }
+    
+      
+    
 }
+let j = 0;
+
+   
+
+
+
+
 function closeNav(){
     pages.style.opacity = '0';
     pages.style.transitionDelay = '0ms';
-    nav.style.transitionDelay = '500ms';
+    nav.style.transitionDelay = '300ms';
     nav.style.width = '50px'
     open = false;
     setTimeout(removeNavBtn, 1000);
+    
 }
 function removeNavBtn(){
     pages.style.display = 'none';
@@ -152,6 +183,7 @@ function removeNavBtn(){
 function addNavBtn(){
     pages.style.opacity = '1';
 }
+
 //activate all pages------------------------------
 function getResults(){
     foodRandomizer();
@@ -237,7 +269,7 @@ function foodRandomizer(){
     foodSlot.innerHTML = randomBreak;
     foodSlot2.innerHTML = randomItem + ' ' + randomItem2 + ' ' + randomItem3;
     foodSlot3.innerHTML = randomTea + ' ' + randomTea2;
-}
+};
 //activity---------------------------------
 function activityRandomizer(){
     let activity = document.getElementById('act');
